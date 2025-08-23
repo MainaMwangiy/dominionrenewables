@@ -1,0 +1,222 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens with water-blue primary and sun secondary */
+  --background: oklch(1 0 0); /* #ffffff */
+  --foreground: oklch(0.27 0 0); /* #343a40 */
+  --card: oklch(0.98 0 0); /* #f8f9fa */
+  --card-foreground: oklch(0.27 0 0); /* #343a40 */
+  --popover: oklch(1 0 0); /* #ffffff */
+  --popover-foreground: oklch(0.27 0 0); /* #343a40 */
+
+  /* Water colors (blue) - now primary */
+  --primary: oklch(0.55 0.2 240); /* #007bff blue */
+  --primary-foreground: oklch(1 0 0); /* #ffffff */
+  --water-blue: oklch(0.55 0.2 240); /* #007bff blue */
+  --water-blue-light: oklch(0.75 0.15 240); /* #66b3ff light blue */
+  --water-blue-dark: oklch(0.35 0.25 240); /* #004085 dark blue */
+
+  /* Sun colors (orange/yellow) - now secondary */
+  --secondary: oklch(0.65 0.18 45); /* #ff8c00 orange */
+  --secondary-foreground: oklch(1 0 0); /* #ffffff */
+
+  --muted: oklch(0.98 0 0); /* #f8f9fa */
+  --muted-foreground: oklch(0.5 0 0); /* #6c757d */
+  --accent: oklch(0.85 0.15 85); /* #ffd700 gold/yellow */
+  --accent-foreground: oklch(0.27 0 0); /* #343a40 */
+  --destructive: oklch(0.55 0.2 25); /* #dc3545 */
+  --destructive-foreground: oklch(1 0 0); /* #ffffff */
+  --border: oklch(0.85 0 0); /* #ced4da */
+  --input: oklch(1 0 0); /* #ffffff */
+  --ring: oklch(0.55 0.2 240 / 0.5); /* blue with opacity */
+  --chart-1: oklch(0.55 0.2 240); /* water blue */
+  --chart-2: oklch(0.65 0.18 45); /* #ff8c00 */
+  --chart-3: oklch(0.6 0.15 140); /* #28a745 green */
+  --chart-4: oklch(0.85 0.15 85); /* #ffd700 */
+  --chart-5: oklch(0.45 0.15 280); /* #6f42c1 */
+  --radius: 0.5rem;
+  --sidebar: oklch(0.98 0 0); /* #f8f9fa */
+  --sidebar-foreground: oklch(0.27 0 0); /* #343a40 */
+  --sidebar-primary: oklch(0.55 0.2 240); /* water blue */
+  --sidebar-primary-foreground: oklch(1 0 0); /* #ffffff */
+  --sidebar-accent: oklch(0.65 0.18 45); /* sun orange */
+  --sidebar-accent-foreground: oklch(1 0 0); /* #ffffff */
+  --sidebar-border: oklch(0.85 0 0); /* #ced4da */
+  --sidebar-ring: oklch(0.55 0.2 240 / 0.5); /* blue with opacity */
+
+  /* WhatsApp green color */
+  --whatsapp-green: oklch(0.6 0.15 140); /* #25d366 WhatsApp green */
+}
+
+/* Updated gradient classes to reflect water-primary, sun-secondary hierarchy */
+@layer utilities {
+  .bg-water-to-sun {
+    background: linear-gradient(135deg, #007bff 0%, #66b3ff 25%, #ffd700 75%, #ff8c00 100%);
+  }
+
+  .bg-sun-to-water {
+    background: linear-gradient(135deg, #ff8c00 0%, #ffd700 25%, #66b3ff 75%, #007bff 100%);
+  }
+
+  .bg-water-gradient {
+    background: linear-gradient(135deg, #007bff 0%, #66b3ff 100%);
+  }
+
+  .bg-sun-gradient {
+    background: linear-gradient(135deg, #ff8c00 0%, #ffd700 100%);
+  }
+
+  /* Added WhatsApp green utility classes */
+  .bg-whatsapp {
+    background-color: #25d366;
+  }
+
+  .text-whatsapp {
+    color: #25d366;
+  }
+
+  .hover\:bg-whatsapp:hover {
+    background-color: #128c7e;
+  }
+
+  .text-water {
+    color: #007bff;
+  }
+
+  .text-sun {
+    color: #ff8c00;
+  }
+
+  .text-water-gradient {
+    background: linear-gradient(135deg, #007bff, #66b3ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-sun-gradient {
+    background: linear-gradient(135deg, #ff8c00, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-water {
+    border-color: #007bff;
+  }
+
+  .border-sun {
+    border-color: #ff8c00;
+  }
+
+  .hover\:bg-water:hover {
+    background-color: #007bff;
+  }
+
+  .hover\:bg-sun:hover {
+    background-color: #ff8c00;
+  }
+}
+
+/* Updated dark mode colors to match screenshot - lighter gray backgrounds */
+.dark {
+  --background: oklch(0.25 0 0); /* #404040 much lighter dark background like screenshot */
+  --foreground: oklch(0.95 0 0); /* #f1f1f1 light text */
+  --card: oklch(0.28 0 0); /* #474747 lighter dark card */
+  --card-foreground: oklch(0.95 0 0); /* #f1f1f1 light text */
+  --popover: oklch(0.28 0 0); /* #474747 lighter dark popover */
+  --popover-foreground: oklch(0.95 0 0); /* #f1f1f1 light text */
+
+  /* Water colors (blue) - adjusted for dark mode */
+  --primary: oklch(0.65 0.2 240); /* #3399ff brighter blue for dark mode */
+  --primary-foreground: oklch(0.08 0 0); /* #141414 dark text on blue */
+  --water-blue: oklch(0.65 0.2 240); /* #3399ff brighter blue */
+  --water-blue-light: oklch(0.75 0.15 240); /* #66b3ff light blue */
+  --water-blue-dark: oklch(0.45 0.25 240); /* #0066cc darker blue */
+
+  /* Sun colors (orange/yellow) - adjusted for dark mode */
+  --secondary: oklch(0.75 0.18 45); /* #ffaa33 brighter orange for dark mode */
+  --secondary-foreground: oklch(0.08 0 0); /* #141414 dark text on orange */
+
+  --muted: oklch(0.32 0 0); /* #525252 lighter muted background */
+  --muted-foreground: oklch(0.65 0 0); /* #a6a6a6 muted text */
+  --accent: oklch(0.85 0.15 85); /* #ffd700 gold/yellow accent */
+  --accent-foreground: oklch(0.08 0 0); /* #141414 dark text on accent */
+  --destructive: oklch(0.65 0.2 25); /* #ff4757 brighter red for dark mode */
+  --destructive-foreground: oklch(0.95 0 0); /* #f1f1f1 light text */
+  --border: oklch(0.4 0 0); /* #666666 lighter border */
+  --input: oklch(0.32 0 0); /* #525252 lighter input background */
+  --ring: oklch(0.65 0.2 240 / 0.5); /* blue ring with opacity */
+  --chart-1: oklch(0.65 0.2 240); /* water blue */
+  --chart-2: oklch(0.75 0.18 45); /* sun orange */
+  --chart-3: oklch(0.7 0.15 140); /* #4ade80 green */
+  --chart-4: oklch(0.85 0.15 85); /* #ffd700 gold */
+  --chart-5: oklch(0.65 0.15 280); /* #a855f7 purple */
+  --sidebar: oklch(0.28 0 0); /* #474747 lighter dark sidebar */
+  --sidebar-foreground: oklch(0.95 0 0); /* #f1f1f1 light text */
+  --sidebar-primary: oklch(0.65 0.2 240); /* water blue */
+  --sidebar-primary-foreground: oklch(0.08 0 0); /* #141414 dark text */
+  --sidebar-accent: oklch(0.75 0.18 45); /* sun orange */
+  --sidebar-accent-foreground: oklch(0.08 0 0); /* #141414 dark text */
+  --sidebar-border: oklch(0.4 0 0); /* #666666 lighter border */
+  --sidebar-ring: oklch(0.65 0.2 240 / 0.5); /* blue ring with opacity */
+
+  /* WhatsApp green for dark mode */
+  --whatsapp-green: oklch(0.65 0.15 140); /* #34d399 brighter WhatsApp green for dark mode */
+}
+
+@theme inline {
+  /* Added Work Sans and Open Sans font families for solar energy design */
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Open Sans", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
