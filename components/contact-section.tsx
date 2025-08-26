@@ -92,7 +92,11 @@ export function ContactSection() {
             <div className="space-y-4">
               <h4 className="font-sans font-semibold text-lg text-foreground">Quick Contact</h4>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="flex-1 bg-green-600 hover:bg-green-700 text-white" asChild>
+                <Button
+                  size="lg"
+                  className="w-48 min-w-[192px] h-12 bg-green-600 hover:bg-green-700 text-white text-base py-3"
+                  asChild
+                >
                   <a
                     href={whatsappUrl}
                     target="_blank"
@@ -106,10 +110,10 @@ export function ContactSection() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="flex-1 bg-gradient-to-r from-blue-500 to-orange-500 text-white border-0 hover:from-blue-600 hover:to-orange-600"
+                  className="w-48 min-w-[192px] h-12 bg-gradient-to-r from-blue-500 to-orange-500 text-white border-0 hover:from-blue-600 hover:to-orange-600 text-base py-3"
                   asChild
                 >
-                  <a href="tel:++254733370370" className="flex items-center justify-center gap-3">
+                  <a href="tel:+254733370370" className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5" />
                     Call Now
                   </a>

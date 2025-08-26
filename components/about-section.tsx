@@ -58,7 +58,7 @@ export function AboutSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-blue-500 hover:from-orange-600 hover:to-blue-600 text-white"
+                className="bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white"
                 asChild
               >
                 <a href="/about">Learn More About Us</a>
@@ -66,7 +66,7 @@ export function AboutSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="bg-gradient-to-r from-blue-500 to-orange-500 text-white border-0 hover:from-blue-600 hover:to-orange-600"
+                className="bg-gradient-to-r from-green-500 to-green-700 text-white border-0 hover:from-green-600 hover:to-green-800"
                 asChild
               >
                 <a href="/gallery">View Our Projects</a>

@@ -85,7 +85,7 @@ export function ServicesSection() {
                   </div>
                   <Button
                     variant="outline"
-                    className="w-full bg-gradient-to-r from-orange-500 to-blue-500 text-white border-0 hover:from-orange-600 hover:to-blue-600"
+                    className="w-full bg-gradient-to-r from-green-500 to-green-700 text-white border-0 hover:from-green-600 hover:to-green-800"
                   >
                     Learn More
                   </Button>

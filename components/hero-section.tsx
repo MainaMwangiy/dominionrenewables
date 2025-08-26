@@ -77,7 +77,7 @@ export function HeroSection() {
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <Link
               href="/about"
-              className="text-gray-700 dark:text-muted-foreground hover:text-sun hover:underline transition-colors"
+              className="text-green-700 dark:text-green-400 hover:text-green-600 dark:hover:text-green-300 hover:underline transition-colors"
             >
               Learn More About Us →
             </Link>
