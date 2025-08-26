@@ -3,37 +3,43 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import SolarPumpingInstallation from '../public/gallery/solar-water-pump-installation.jpg';
+import TankTowerConstruction from '../public/gallery/TankTowerConstruction.jpg';
+import SolarCCTVSystem from '../public/gallery/SolarCCTVSystem.jpg';
+import SolarLightingProject from '../public/gallery/SolarLightingProject.jpg';
+import ResidentialSolarInstallation from '../public/gallery/residential-solar-installation.jpg';
+import CommercialBuildingSolar from '../public/gallery/commercial-building-solar.jpg';
 
 const galleryItems = [
   {
     title: "Solar Water Pumping Installation",
     description: "Complete borehole pump system with solar panels",
-    image: "/solar-water-pump-installation.png",
+    image: SolarPumpingInstallation,
   },
   {
     title: "Tank Tower Construction",
     description: "Professional water storage tower installation",
-    image: "/placeholder-1fycv.png",
+    image: TankTowerConstruction,
   },
   {
     title: "Solar CCTV System",
     description: "Wireless security camera with solar power",
-    image: "/placeholder-r6u04.png",
+    image: SolarCCTVSystem,
   },
   {
     title: "Solar Lighting Project",
     description: "LED street lighting powered by solar energy",
-    image: "/placeholder-p0fnm.png",
+    image: SolarLightingProject,
   },
   {
     title: "Residential Solar Installation",
     description: "Home solar panel and inverter system",
-    image: "/residential-solar-installation.png",
+    image: ResidentialSolarInstallation,
   },
   {
     title: "Commercial Solar Project",
     description: "Large-scale solar installation for business",
-    image: "/commercial-building-solar.png",
+    image: CommercialBuildingSolar,
   },
 ]
 
