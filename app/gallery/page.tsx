@@ -220,7 +220,7 @@ export default function GalleryClientPage() {
   const currentProjects = projects.slice(startIndex, endIndex)
 
   const whatsappMessage = encodeURIComponent("Hello, I would like to inquire about your services")
-  const whatsappUrl = `https://wa.me/+254704286409?text=${whatsappMessage}`
+  const whatsappUrl = `https://wa.me/+254733370370?text=${whatsappMessage}`
 
   return (
     <main className="min-h-screen">
@@ -380,9 +380,9 @@ export default function GalleryClientPage() {
               className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
               asChild
             >
-              <a href="tel:+254704286409" className="flex items-center gap-2">
+              <a href="tel:+254733370370" className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
-                Call Now: +254704286409
+                Call Now: +254733370370
               </a>
             </Button>
           </div>

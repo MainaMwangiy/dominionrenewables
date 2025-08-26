@@ -31,7 +31,7 @@ export function ContactSection() {
     }))
   }
   const message = encodeURIComponent("Hello, I would like to inquire about your services");
-  const whatsappUrl = `https://wa.me/+254704286409?text=${message}`;
+  const whatsappUrl = `https://wa.me/+254733370370?text=${message}`;
   return (
     <section id="contact" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,7 +55,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Phone</p>
-                    <p className="text-muted-foreground">+254704286409</p>
+                    <p className="text-muted-foreground">+254733370370</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -109,7 +109,7 @@ export function ContactSection() {
                   className="flex-1 bg-gradient-to-r from-blue-500 to-orange-500 text-white border-0 hover:from-blue-600 hover:to-orange-600"
                   asChild
                 >
-                  <a href="tel:++254704286409" className="flex items-center justify-center gap-3">
+                  <a href="tel:++254733370370" className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5" />
                     Call Now
                   </a>

@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 
 export function Footer() {
   const message = encodeURIComponent("Hello, I would like to inquire about your services");
-  const whatsappUrl = `https://wa.me/+254704286409?text=${message}`;
+  const whatsappUrl = `https://wa.me/+254733370370?text=${message}`;
   const copyrightYear = dayjs().year();
   return (
     <footer className="bg-card text-card-foreground border-t border-border">
@@ -68,7 +68,7 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-muted-foreground" />
-                <span className="text-muted-foreground">+254704286409</span>
+                <span className="text-muted-foreground">+254733370370</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-muted-foreground" />

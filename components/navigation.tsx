@@ -17,7 +17,7 @@ export function Navigation() {
     }
   }
   const message = encodeURIComponent("Hello, I would like to inquire about your services");
-  const whatsappUrl = `https://wa.me/+254704286409?text=${message}`;
+  const whatsappUrl = `https://wa.me/+254733370370?text=${message}`;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -75,7 +75,7 @@ export function Navigation() {
               className="bg-gradient-to-r from-blue-500 to-orange-500 text-white border-0 hover:from-blue-600 hover:to-orange-600"
               asChild
             >
-              <a href="tel:++254704286409" className="flex items-center gap-2">
+              <a href="tel:++254733370370" className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
                 Call Now
               </a>
@@ -152,14 +152,14 @@ export function Navigation() {
                 className="bg-gradient-to-r from-blue-500 to-orange-500 text-white border-0 hover:from-blue-600 hover:to-orange-600"
                 asChild
               >
-                <a href="tel:++254704286409" className="flex items-center justify-center gap-2">
+                <a href="tel:++254733370370" className="flex items-center justify-center gap-2">
                   <Phone className="h-4 w-4" />
                   Call Now
                 </a>
               </Button>
               <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white" asChild>
                 <a
-                  href="https://wa.me/+254704286409"
+                  href="https://wa.me/+254733370370"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2"

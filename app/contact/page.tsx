@@ -69,7 +69,7 @@ export default function ContactPage() {
     }))
   }
   const message = encodeURIComponent("Hello, I would like to inquire about your services");
-  const whatsappUrl = `https://wa.me/+254704286409?text=${message}`;
+  const whatsappUrl = `https://wa.me/+254733370370?text=${message}`;
   const servicesByCity: string[] = [
     'Machakos',
     'Kitui',
@@ -233,8 +233,8 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="font-medium">Call Us</p>
-                        <a href="tel:++254704286409" className="text-primary hover:underline">
-                          +254704286409
+                        <a href="tel:++254733370370" className="text-primary hover:underline">
+                          +254733370370
                         </a>
                       </div>
                     </div>
@@ -246,7 +246,7 @@ export default function ContactPage() {
                       <div>
                         <p className="font-medium">WhatsApp</p>
                         <a
-                          href="https://wa.me/+254704286409"
+                          href="https://wa.me/+254733370370"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-primary hover:underline"
@@ -368,7 +368,7 @@ export default function ContactPage() {
               className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
               asChild
             >
-              <a href="tel:++254704286409" className="flex items-center gap-2">
+              <a href="tel:++254733370370" className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
                 Emergency Hotline
               </a>

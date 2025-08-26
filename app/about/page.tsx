@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const message = encodeURIComponent("Hello, I would like to inquire about your services");
-  const whatsappUrl = `https://wa.me/+254704286409?text=${message}`;
+  const whatsappUrl = `https://wa.me/+254733370370?text=${message}`;
   return (
     <main className="min-h-screen">
       <Navigation />
@@ -67,7 +67,7 @@ export default function AboutPage() {
                   </a>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <a href="tel:++254704286409" className="flex items-center gap-2">
+                  <a href="tel:++254733370370" className="flex items-center gap-2">
                     <Phone className="h-5 w-5" />
                     Call Us Today
                   </a>
@@ -254,7 +254,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
               <a
-                href="https://wa.me/+254704286409"
+                href="https://wa.me/+254733370370"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
@@ -269,9 +269,9 @@ export default function AboutPage() {
               className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
               asChild
             >
-              <a href="tel:++254704286409" className="flex items-center gap-2">
+              <a href="tel:++254733370370" className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
-                Call Now: +254704286409
+                Call Now: +254733370370
               </a>
             </Button>
           </div>

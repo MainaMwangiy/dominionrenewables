@@ -1,101 +1,136 @@
+// No 'use client' directive needed
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   Droplets,
-  Zap,
   Shield,
   Sun,
-  Settings,
   Wrench,
   Phone,
   MessageCircle,
   CheckCircle,
   ArrowRight,
+  Battery,
+  Grid,
+  Drill
 } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
+import BoreHoleDrillingServices from '../../public/services/borehole-drilling.jpg';
+import SolarBackupSystem from '../../public/services/solar-backup-system.jpg';
+import OffgridSolarSystems from '../../public/services/off-grid-solar.jpg';
+import GridTieSystems from '../../public/services/grid-tie-solar.jpg';
+import SolarWaterPumpingSystems from '../../public/services/solar-water-pumping.jpg';
+import SolarCCTV from '../../public/services/solar-cctv.jpg';
+import BoreholeEquiping from '../../public/services/borehole-equipping.jpg';
 
 export const metadata: Metadata = {
-  title: "Solar Services - Water Pumping, CCTV & Lighting | Dominion Renewables",
+  title: "Solar Services - Water Pumping, CCTV & Backup Systems | Dominion Renewables",
   description:
-    "Comprehensive solar services including water pumping systems, tank towers, solar CCTV, lighting solutions, installation, maintenance and repair services nationwide.",
+    "Comprehensive solar services including borehole drilling, water pumping, solar backup, off-grid and grid-tie systems, CCTV installation, and borehole equipping nationwide.",
   keywords:
-    "solar water pumping, borehole pumps, tank tower installation, solar CCTV systems, solar lighting, solar panel installation, maintenance, repair services",
+    "borehole drilling, solar water pumping, solar backup systems, off-grid solar, grid-tie solar, CCTV installation, borehole equipping, solar services",
 }
 
 export default function ServicesPage() {
   const services = [
     {
+      icon: Drill,
+      title: "Borehole Drilling Services",
+      description:
+        "Professional borehole drilling services for reliable water access in residential and commercial settings.",
+      features: [
+        "Site assessment",
+        "Geological surveys",
+        "Drilling operations",
+        "Casing installation",
+        "Water yield testing",
+      ],
+      image: BoreHoleDrillingServices,
+    },
+    {
+      icon: Battery,
+      title: "Solar Backup Systems",
+      description: "Reliable solar-powered backup systems to ensure uninterrupted power supply during outages.",
+      features: [
+        "Battery storage solutions",
+        "Inverter integration",
+        "Automatic switchover",
+        "Remote monitoring",
+        "Scalable capacity",
+      ],
+      image: SolarBackupSystem,
+    },
+    {
+      icon: Sun,
+      title: "Solar Off-Grid Systems",
+      description: "Complete off-grid solar solutions for energy independence in remote locations.",
+      features: [
+        "Solar panel installation",
+        "Battery banks",
+        "Charge controllers",
+        "System monitoring",
+        "Custom design",
+      ],
+      image: OffgridSolarSystems,
+    },
+    {
+      icon: Grid,
+      title: "Grid-Tie Systems",
+      description: "Efficient grid-tie solar systems to reduce energy costs and integrate with utility grids.",
+      features: [
+        "Net metering",
+        "High-efficiency inverters",
+        "System design",
+        "Grid synchronization",
+        "Performance optimization",
+      ],
+      image: GridTieSystems,
+    },
+    {
       icon: Droplets,
       title: "Solar Water Pumping Systems",
-      description:
-        "Complete solar-powered water pumping solutions for residential, agricultural, and commercial applications.",
+      description: "Solar-powered water pumping solutions for agricultural, residential, and commercial use.",
       features: [
         "Borehole pump installation",
         "Surface water pumping",
         "Irrigation systems",
-        "Water storage solutions",
         "Remote monitoring",
+        "Energy-efficient operation",
       ],
-      image: "/placeholder-r3bn1.png",
-    },
-    {
-      icon: Sun,
-      title: "Tank Tower Construction",
-      description: "Professional tank tower design and installation for elevated water storage systems.",
-      features: ["Custom tower design", "Foundation work", "Tank installation", "Piping systems", "Safety compliance"],
-      image: "/water-tank-tower-construction.png",
+      image: SolarWaterPumpingSystems,
     },
     {
       icon: Shield,
-      title: "Solar CCTV Systems",
-      description: "Solar-powered security camera systems for remote monitoring and surveillance.",
+      title: "CCTV Installation",
+      description: "Solar-powered CCTV systems for enhanced security and remote monitoring.",
       features: [
         "Wireless camera systems",
         "Night vision capability",
-        "Remote access",
         "Motion detection",
         "Cloud storage",
+        "Remote access",
       ],
-      image: "/placeholder-6jz6q.png",
-    },
-    {
-      icon: Zap,
-      title: "Solar Lighting Solutions",
-      description: "Energy-efficient solar lighting systems for outdoor and indoor applications.",
-      features: ["Street lighting", "Garden lighting", "Security lighting", "Indoor solar systems", "Smart controls"],
-      image: "/solar-street-lighting-installation.png",
-    },
-    {
-      icon: Settings,
-      title: "System Installation",
-      description: "Professional installation services for all types of solar energy systems.",
-      features: [
-        "Site assessment",
-        "System design",
-        "Professional installation",
-        "Testing & commissioning",
-        "Training & handover",
-      ],
-      image: "/solar-panel-installation.png",
+      image: SolarCCTV,
     },
     {
       icon: Wrench,
-      title: "Maintenance & Repair",
-      description: "Comprehensive maintenance and repair services to keep your systems running optimally.",
+      title: "Borehole Equipping",
+      description: "Comprehensive borehole equipping services for efficient water extraction and management.",
       features: [
-        "Preventive maintenance",
-        "Emergency repairs",
-        "Component replacement",
-        "Performance optimization",
-        "24/7 support",
+        "Pump installation",
+        "Piping systems",
+        "Control systems",
+        "Water storage integration",
+        "Maintenance services",
       ],
-      image: "/placeholder-dfam0.png",
+      image: BoreholeEquiping,
     },
   ]
   const message = encodeURIComponent("Hello, I would like to inquire about your services");
-  const whatsappUrl = `https://wa.me/+254704286409?text=${message}`;
+  const whatsappUrl = `https://wa.me/+254733370370?text=${message}`;
   return (
     <main className="min-h-screen">
       <Navigation />
@@ -106,12 +141,11 @@ export default function ServicesPage() {
           <div className="text-center mb-16">
             <Badge className="mb-4">Our Services</Badge>
             <h1 className="font-sans font-bold text-4xl md:text-6xl text-foreground mb-6">
-              Complete Solar
+              Comprehensive Solar
               <span className="text-primary block">Energy Solutions</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From water pumping systems to security solutions, we provide comprehensive solar services tailored to your
-              needs.
+              From borehole drilling to solar backup and CCTV systems, we provide tailored solar solutions for your needs.
             </p>
           </div>
         </div>
@@ -156,7 +190,7 @@ export default function ServicesPage() {
                       </a>
                     </Button>
                     <Button variant="outline" size="lg" asChild>
-                      <a href="tel:++254704286409" className="flex items-center gap-2">
+                      <a href="tel:+254733370370" className="flex items-center gap-2">
                         <Phone className="h-5 w-5" />
                         Call Now
                       </a>
@@ -165,11 +199,13 @@ export default function ServicesPage() {
                 </div>
 
                 <div className={index % 2 === 1 ? "lg:col-start-1" : ""}>
-                  <img
-                    src={service.image || "/placeholder.svg"}
-                    alt={service.title}
-                    className="rounded-lg shadow-lg w-full"
-                  />
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  className="rounded-lg shadow-lg w-full h-full md:w-[500px] md:h-[500px]"
+                  width={500}
+                  height={500}
+                />
                 </div>
               </div>
             ))}
@@ -233,7 +269,7 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
               <a
-                href="https://wa.me/+254704286409"
+                href="https://wa.me/+254733370370"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"

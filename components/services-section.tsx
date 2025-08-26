@@ -1,57 +1,62 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Droplets, Building, Shield, Lightbulb, Wrench, Zap, CheckCircle } from "lucide-react";
+import { Droplets, Shield, Wrench, CheckCircle, Battery, Sun, Grid, Drill } from "lucide-react";
 
 const services = [
   {
-    icon: Droplets,
-    title: "Solar Water Pumping Systems",
-    description: "Complete borehole pump wiring and automatic water pumping solutions powered by solar energy.",
-    features: ["Borehole pump installation", "Automatic controls", "Energy-efficient operation", "Remote monitoring"],
+    icon: Drill,
+    title: "Borehole Drilling Services",
+    description: "Professional borehole drilling for reliable water access in residential and commercial settings.",
+    features: ["Site assessment", "Geological surveys", "Drilling operations", "Casing installation", "Water yield testing"],
   },
   {
-    icon: Building,
-    title: "Tank Tower Installation",
-    description: "Professional planning and erection of water storage tank towers with structural integrity.",
-    features: ["Site assessment", "Foundation work", "Tower construction", "Safety compliance"],
+    icon: Battery,
+    title: "Solar Backup Systems",
+    description: "Reliable solar-powered backup systems to ensure uninterrupted power during outages.",
+    features: ["Battery storage solutions", "Inverter integration", "Automatic switchover", "Remote monitoring", "Scalable capacity"],
+  },
+  {
+    icon: Sun,
+    title: "Solar Off-Grid Systems",
+    description: "Complete off-grid solar solutions for energy independence in remote locations.",
+    features: ["Solar panel installation", "Battery banks", "Charge controllers", "System monitoring", "Custom design"],
+  },
+  {
+    icon: Grid,
+    title: "Grid-Tie Systems",
+    description: "Efficient grid-tie solar systems to reduce energy costs and integrate with utility grids.",
+    features: ["Net metering", "High-efficiency inverters", "System design", "Grid synchronization", "Performance optimization"],
+  },
+  {
+    icon: Droplets,
+    title: "Solar Water Pumping Systems",
+    description: "Solar-powered water pumping solutions for agricultural, residential, and commercial use.",
+    features: ["Borehole pump installation", "Surface water pumping", "Irrigation systems", "Remote monitoring", "Energy-efficient operation"],
   },
   {
     icon: Shield,
-    title: "Solar CCTV Systems",
-    description: "Advanced solar-powered security camera systems for remote monitoring and surveillance.",
-    features: ["Wireless connectivity", "Night vision", "Motion detection", "Cloud storage"],
-  },
-  {
-    icon: Lightbulb,
-    title: "Solar Lighting Solutions",
-    description: "Comprehensive outdoor and indoor lighting systems powered by renewable solar energy.",
-    features: ["LED technology", "Motion sensors", "Weather resistant", "Long battery life"],
-  },
-  {
-    icon: Zap,
-    title: "Solar Panel & Inverter Installation",
-    description: "Professional installation of solar panels and inverter systems for residential and commercial use.",
-    features: ["System design", "Grid-tie options", "Battery backup", "Performance monitoring"],
+    title: "CCTV Installation",
+    description: "Advanced solar-powered CCTV systems for remote monitoring and surveillance.",
+    features: ["Wireless connectivity", "Night vision", "Motion detection", "Cloud storage", "Remote access"],
   },
   {
     icon: Wrench,
-    title: "Repair & Maintenance",
-    description: "Nationwide repair and maintenance services for all solar-powered systems and equipment.",
-    features: ["Emergency repairs", "Preventive maintenance", "System upgrades", "Performance optimization"],
+    title: "Borehole Equipping",
+    description: "Comprehensive borehole equipping services for efficient water extraction and management.",
+    features: ["Pump installation", "Piping systems", "Control systems", "Water storage integration", "Maintenance services"],
   },
 ]
 
 export function ServicesSection() {
   const message = encodeURIComponent("Hello, I would like to inquire about your services.");
-  const whatsappUrl = `https://wa.me/+254704286409?text=${message}`;
+  const whatsappUrl = `https://wa.me/+254733370370?text=${message}`;
   return (
     <section id="services" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-sans font-bold text-3xl md:text-4xl text-foreground mb-4">Our Solar Solutions</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive solar-powered systems designed to meet your water, security, and energy needs with
-            professional installation and ongoing support.
+            Comprehensive solar-powered systems designed to meet your water, security, and energy needs with professional installation and ongoing support.
           </p>
         </div>
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function HeroSection() {
   const message = encodeURIComponent("Hello, I would like to inquire about your services");
-  const whatsappUrl = `https://wa.me/+254704286409?text=${message}`;
+  const whatsappUrl = `https://wa.me/+254733370370?text=${message}`;
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center bg-white dark:bg-background">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -66,9 +66,9 @@ export function HeroSection() {
               className="text-lg px-8 py-4 bg-white/90 dark:bg-background/90 text-water border-water hover:bg-water hover:text-white backdrop-blur-sm"
               asChild
             >
-              <a href="tel:++254704286409" className="flex items-center gap-3">
+              <a href="tel:++254733370370" className="flex items-center gap-3">
                 <Phone className="h-5 w-5" />
-                Call Now: +254704286409
+                Call Now: +254733370370
               </a>
             </Button>
           </div>
