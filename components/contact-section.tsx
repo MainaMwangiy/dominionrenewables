@@ -7,21 +7,56 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, MessageCircle, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from "lucide-react";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
+    company: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [submitMessage, setSubmitMessage] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({ name: "", email: "", message: "" })
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmitStatus("success")
+        setSubmitMessage(result.message)
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          company: "",
+          message: "",
+        })
+      } else {
+        setSubmitStatus("error")
+        setSubmitMessage(result.message || "Something went wrong. Please try again.")
+      }
+    } catch (error) {
+      setSubmitStatus("error")
+      setSubmitMessage("Network error. Please check your connection and try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -55,7 +90,9 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Phone</p>
-                    <p className="text-muted-foreground">+254733370370</p>
+                    <a href="tel:+254733370370" className="text-primary hover:underline">
+                      +254733370370
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -64,7 +101,9 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <p className="text-muted-foreground">info@dominionrenewables.com</p>
+                    <a href="mailto:info@dominionrenewables.com" className="text-primary hover:underline">
+                      info@dominionrenewables.com
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -126,48 +165,112 @@ export function ContactSection() {
           <Card>
             <CardHeader>
               <CardTitle className="font-sans text-xl">Send us a Message</CardTitle>
+              <p className="text-muted-foreground">
+                Fill out the form below and we'll get back to you within 24 hours.
+              </p>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full"
-                  />
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium mb-2">
+                      First Name *
+                    </label>
+                    <Input
+                      id="firstName"
+                      name="firstName"
+                      type="text"
+                      required
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      placeholder="John"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium mb-2">
+                      Last Name *
+                    </label>
+                    <Input
+                      id="lastName"
+                      name="lastName"
+                      type="text"
+                      required
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      placeholder="Smith"
+                    />
+                  </div>
                 </div>
+
                 <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    Email Address *
+                  </label>
                   <Input
-                    type="email"
+                    id="email"
                     name="email"
-                    placeholder="Your Email"
+                    type="email"
+                    required
                     value={formData.email}
                     onChange={handleChange}
-                    required
-                    className="w-full"
+                    placeholder="john@example.com"
                   />
                 </div>
+
                 <div>
+                  <label htmlFor="company" className="block text-sm font-medium mb-2">
+                    Company/Organization *
+                  </label>
+                  <Input
+                    id="company"
+                    name="company"
+                    type="text"
+                    required
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Your Company Name"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    Project Details *
+                  </label>
                   <Textarea
+                    id="message"
                     name="message"
-                    placeholder="Tell us about your project requirements..."
+                    required
                     value={formData.message}
                     onChange={handleChange}
-                    required
+                    placeholder="Tell us about your solar project requirements..."
                     rows={5}
-                    className="w-full"
                   />
                 </div>
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-orange-500 to-blue-500 hover:from-orange-600 hover:to-blue-600 text-white"
-                >
-                  Send Message
+
+                {/* Submit Status */}
+                {submitStatus === "success" && (
+                  <div className="flex items-center gap-2 text-green-600 bg-green-50 p-3 rounded-md">
+                    <CheckCircle className="h-5 w-5" />
+                    <span>{submitMessage}</span>
+                  </div>
+                )}
+
+                {submitStatus === "error" && (
+                  <div className="flex items-center gap-2 text-red-600 bg-red-50 p-3 rounded-md">
+                    <AlertCircle className="h-5 w-5" />
+                    <span>{submitMessage}</span>
+                  </div>
+                )}
+
+                <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      <Send className="h-5 w-5 mr-2" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>

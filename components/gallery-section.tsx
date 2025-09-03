@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import SolarPumpingInstallation from '../public/gallery/solar-water-pump-installation.jpg';
 import TankTowerConstruction from '../public/gallery/TankTowerConstruction.jpg';
-import SolarCCTVSystem from '../public/gallery/SolarCCTVSystem.jpg';
+import SolarCCTVSystem from '../public/gallery/SolarCCTVSystem.jpeg';
 import SolarLightingProject from '../public/gallery/SolarLightingProject.jpg';
 import ResidentialSolarInstallation from '../public/gallery/residential-solar-installation.jpg';
 import CommercialBuildingSolar from '../public/gallery/commercial-building-solar.jpg';
